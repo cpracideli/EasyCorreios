@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 namespace EasyCorreios.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TrackingController : ControllerBase
 {
     [HttpGet("{trackingCode}")]
     async public Task<string> Get(string trackingCode)
     {
         
-        string urlTracking = "https://proxyapp.correios.com.br/v1/sro-rastro/";
+        string urlTracking = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
+        
 
         var client = new HttpClient();
 
